@@ -38,6 +38,105 @@
             <img src="./assests/bg_1.jpglaptop.webp" alt="phone image">
         </div>
     </section>
+<!-- jamshaid -->
+ <section class="slider-section">
+    <h2>HAPPY CLIENTS</h2>
+
+    <div class="slider-container">
+        <div class="slider" id="slider">
+
+            <div class="slide">
+                <div class="card">
+                    <img src="https://preview.colorlib.com/theme/digilab/images/person_1.jpg" alt="client">
+                    <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, consectetur a? Dolor, doloribus, quisquam quam omnis animi voluptate sit qui voluptas, ab sapiente beatae enim et! Culpa porro nostrum repellat itaque corporis unde quis fuga, rem blanditiis animi eius voluptate alias obcaecati in deserunt eum!</b></p>
+                    <h3>John Fox</h3>
+                    <span>Businessman</span>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="card">
+                    <img src="https://preview.colorlib.com/theme/digilab/images/person_3.jpg" alt="client">
+                     <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, consectetur a? Dolor, doloribus, quisquam quam omnis animi voluptate sit qui voluptas, ab sapiente beatae enim et! Culpa porro nostrum repellat itaque corporis unde quis fuga, rem blanditiis animi eius voluptate alias obcaecati in deserunt eum!</b></p>
+                    <h3>Jhon Fox</h3>
+                    <span>Businessman</span>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="card">
+                    <img src="https://preview.colorlib.com/theme/digilab/images/person_3.jpg" alt="client">
+                     <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, consectetur a? Dolor, doloribus, quisquam quam omnis animi voluptate sit qui voluptas, ab sapiente beatae enim et! Culpa porro nostrum repellat itaque corporis unde quis fuga, rem blanditiis animi eius voluptate alias obcaecati in deserunt eum!</b></p>
+                    <h3>Jhon Fox</h3>
+                    <span>Businessman</span>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="card">
+                    <img src="https://preview.colorlib.com/theme/digilab/images/person_4.jpg" alt="client">
+                     <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, consectetur a? Dolor, doloribus, quisquam quam omnis animi voluptate sit qui voluptas, ab sapiente beatae enim et! Culpa porro nostrum repellat itaque corporis unde quis fuga, rem blanditiis animi eius voluptate alias obcaecati in deserunt eum!</b></p>
+                    <h3>Jhon Fox</h3>
+                    <span>Businessman</span>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="card">
+                    <img src="https://preview.colorlib.com/theme/digilab/images/person_1.jpg" alt="client">
+                    <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, consectetur a? Dolor, doloribus, quisquam quam omnis animi voluptate sit qui voluptas, ab sapiente beatae enim et! Culpa porro nostrum repellat itaque corporis unde quis fuga, rem blanditiis animi eius voluptate alias obcaecati in deserunt eum!</b></p>
+                    <h3>Jhon Fox</h3>
+                    <span>Businessman</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="dots" id="dots"></div>
+</section>
+
+<script>
+const slider = document.getElementById("slider");
+const slides = document.querySelectorAll(".slide");
+const dotsContainer = document.getElementById("dots");
+
+let index = 0;
+const totalSlides = slides.length;
+const visibleSlides = 3;  // you are showing 3 cards at a time
+
+// Create dots (totalSlides - visibleSlides + 1)
+const dotsCount = totalSlides - visibleSlides + 1;
+
+for (let i = 0; i < dotsCount; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => {
+        index = i;
+        updateSlider();
+    });
+
+    dotsContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll(".dot");
+
+// Update Slider Function
+function updateSlider() {
+    slider.style.transform = `translateX(-${index * 33.33}%)`;
+
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+// Auto Slide Every 3 Seconds
+setInterval(() => {
+    index++;
+    if (index >= dotsCount) index = 0;
+    updateSlider();
+}, 3000);
+</script>
 
 
 </body>
