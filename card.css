@@ -29,12 +29,16 @@
     padding-bottom: 10px;
 }
 .card1{
+    position: relative;
     width: 350px;
     height: 400px;
 }
 .card1-img img{
      width: 350px;
     height: 350px;
+}
+.card1-content {
+    position: absolute;
 }
 .card1-content h5{
     font-size: 20px;
