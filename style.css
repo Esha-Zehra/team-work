@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-left: 8%;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.sidebar {
+    flex-wrap: wrap;
+    width: 50%;
+    height: 500px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+.sidebar head {
+    display: flex;
+    flex-direction: column;
+}
+
+.head-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.head-item i {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.head-item:not(.active):hover {
+    color: #ccffcc;
+    transform: translateX(5px);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.content-header {
+    margin-bottom: 20px;
+}
+
+.lightbulb-icon {
+    font-size: 60px;
+    color: #4CAF50;
+    background: none;
+    padding: 0;
+    display: inline-block;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.content h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    background: linear-gradient(to bottom, #8fdd8e, #4CAF50);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.learn-more-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.sidebar::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 80%;
+        height: auto;
+        box-shadow: none;
+        margin: auto;
+        padding: 20px 0;
+    }
+    .sidebar {
+        width: 90%;
+        height: auto;
+        padding: 10px 0;
+    }
+    .sidebar head {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .head-item {
+        padding: 10px 15px;
+        font-size: 14px;
+        flex-basis: auto;
+    }
+    .head-item i {
+        margin-right: 5px;
+    }
+    .sidebar::after {
+        content: none;
+    }
+    .content {
+        margin-top: 20%;
+        padding: 0;
+        text-align: center;
+    }
+}
